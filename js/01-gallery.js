@@ -24,13 +24,32 @@ function onClick(event) {
     </div>`
     
   )
-    instance.show()
-  list.addEventListener("keydown", (event) => {
+  instance.show()
+  list.addEventListener("keydown", escClose)
+  function escClose(event) {
     if (event.code === "Escape") {
-      instance.close();
+      instance.close()
+      list.removeEventListener("keydown", escClose)
+
     }
-  })
-}
+  }
+ 
+   
+  
+  
+  }
 
 
+// function escClose(event) {
+//   list.addEventListener("keydown", (event) => {
+//     if (event.code === "Escape") {
+//       instance.close();
+//     }
+//   })
+// }
 
+// function escClose(event) {
+//   if (event.code === "Escape") {
+//     instance.close()
+//   }
+// }
